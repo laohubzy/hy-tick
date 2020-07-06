@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {HashRouter, Switch, Route } from 'react-router-dom'
+import {HashRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Login from '@/pages/login/login'
 export default class RouteConfig extends Component {
     render() {
@@ -16,6 +16,7 @@ export default class RouteConfig extends Component {
               <Route path="/technology"  component= {technology}/>
               <Redirect exact from='/' to='/profile'/>
               <Route component= {profile}/> */}
+              <Redirect exact from='/' to='/login'/>
             </Switch>
           </HashRouter>            
         )
