@@ -45,7 +45,6 @@ class Login extends Component {
                     </div>
                     <button onClick={() => this.submit()}>提交</button>                    
                 </div>
-
             </div>
         )
     }
