@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import {HashRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Login from '@/pages/login/login'
+import Demo from '@/pages/demo/demo'
 export default class RouteConfig extends Component {
     render() {
         return (
             <HashRouter>
             <Switch>
               <Route path="/login" component= {Login}/>
+              <Route path="/demo" component= {Demo}/>
               {/* <Route path="/login" component= {login}/>
               <Route path="/info"  component= {info}/>
               <Route path="/msite" component= {msite}/>
