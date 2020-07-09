@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-// import { createStore } from 'redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import Footer from './components/Footer'
+import AddTodo from './components/AddTodo'
+import VisibleTodoList from './components/VisibleTodoList'
 
-// import VisibleTodoList  from './components/VisibleTodoList'
-// import AddTodo  from './components/AddTodo'
-// import Footer  from './components/Footer'
 
 
+let store = createStore(todoApp)
 
-// let store = createStore(todoApp)
-
-class Demo extends Component {
-    render() {
-        // store={store}
-        return (
-            <Provider >
-            </Provider>
-        )
-    }
+function Demo() {
+    return (
+        <Provider store={store}>
+            <AddTodo />
+            <VisibleTodoList />
+            <Footer />
+        </Provider>
+    )
 }
 
 export default Demo

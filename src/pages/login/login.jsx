@@ -27,8 +27,8 @@ class Login extends Component {
     }
     render() {
         return (
-            <div class="login-wrapper flex-col-center ">
-                <div class="login-pane">
+            <div className="login-wrapper flex-col-center ">
+                <div className="login-pane">
                     <div>
                         <input type="text" placeholder="用户名"
                             value={this.state.userName}
