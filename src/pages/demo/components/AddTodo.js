@@ -2,11 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
-// const mapStateToProps = (state, ownProps) => {
-//   console.log('addtodo:', state, ownProps)
-//   return state
-// }
-
 let AddTodo = ({ dispatch }) => {
   let input
 

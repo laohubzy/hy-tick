@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { A_setUserInfo } from '@/actions/userInfo'
 import './login.scss'
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      D_setUserInfo: (userInfo) => {
+        dispatch(A_setUserInfo(userInfo))
+      }
+    }
+  }
+
 class Login extends Component {
-    constructor() {
+    constructor({ D_setUserInfo }) {
         super()
         this.state = {
             userName: '',
             password: '',
             passwordVisible: false
         }
-        this.changeHandle.bind(this)
+        this.D_setUserInfo = D_setUserInfo
     }
     changeHandle(event, type) {
         let value = event.target.value
@@ -23,7 +35,12 @@ class Login extends Component {
         this.setState(newState)
     }
     submit() {
-        console.log(this.state)
+        const { userName, password } = this.state
+        this.D_setUserInfo({
+            userName,
+            password
+        })
+        this.props.history.push('/home')
     }
     render() {
         return (
@@ -50,4 +67,7 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default connect(
+    null,
+    mapDispatchToProps
+)(Login)
