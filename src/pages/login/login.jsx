@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { A_setUserInfo } from '@/actions/userInfo'
+import userApi from '@/http/api/user'
 import './login.scss'
 
 const mapDispatchToProps = (dispatch) => {
@@ -34,13 +35,28 @@ class Login extends Component {
         }
         this.setState(newState)
     }
-    submit() {
+    login() {
         const { userName, password } = this.state
-        this.D_setUserInfo({
+
+        userApi.login({
             userName,
             password
+        }).then(res => {
+            const { userId, userName, token } = res
+            localStorage.setItem('userId', userId)
+            localStorage.setItem('userName', userName)
+            localStorage.setItem('token', token)
+            this.props.history.push('/home')
         })
-        this.props.history.push('/home')
+    }
+    register() {
+        const { userName, password } = this.state
+        userApi.register({
+            userName,
+            password
+        }).then(res => {
+            console.log(res)
+        })        
     }
     render() {
         return (
@@ -60,7 +76,8 @@ class Login extends Component {
                             <i className={this.state.passwordVisible ? 'hy-icon-eye' : 'hy-icon-eye1'} />
                         </div>
                     </div>
-                    <button onClick={() => this.submit()}>提交</button>                    
+                    <button onClick={() => this.login()}>登录</button> 
+                    <button onClick={() => this.register()}>注册</button>                    
                 </div>
             </div>
         )
