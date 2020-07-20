@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { A_setUserInfo } from '@/actions/userInfo'
 import userApi from '@/http/api/user'
-import './login.scss'
+import styles from './login.module.scss'
 
 const mapDispatchToProps = (dispatch) => {
     return {
@@ -61,7 +61,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login-wrapper flex-col-center ">
-                <div className="login-pane">
+                <div className={styles['login-pane']}>
                     <div>
                         <input type="text" placeholder="用户名"
                             value={this.state.userName}
