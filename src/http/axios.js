@@ -2,7 +2,7 @@
 import axios from 'axios'
 import HTTP_CODE from './httpCode'
 const instance = axios.create({
-    baseURL: 'http://192.168.13.121:8888'
+    baseURL: 'http://169.254.129.119:8888'
 })
 
 /**

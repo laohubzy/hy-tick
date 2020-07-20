@@ -8,6 +8,7 @@ import tickStore from '@/reducers'
 import Login from '@/pages/login/login'
 import Demo from '@/pages/demo/demo'
 import Home from '@/pages/home/home'
+import WebApp from '@/pages/webApp/webApp'
 
 
 const store = createStore(tickStore)
@@ -20,6 +21,7 @@ export default class RouteConfig extends Component {
                     <Route path="/login" component= {Login}/>
                     <Route path="/home" component= {Home}/>
                     <Route path="/demo" component= {Demo}/>
+                    <Route path="/webApp" component={WebApp} />
                     {/* <Route path="/login" component= {login}/>
                     <Route path="/info"  component= {info}/>
                     <Route path="/msite" component= {msite}/>

@@ -3,6 +3,7 @@ import React from 'react';
 import Route from '@/routes/index'
 import './App.css';
 import '@/assets/style/index.scss';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
